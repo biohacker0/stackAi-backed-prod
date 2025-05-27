@@ -82,8 +82,3 @@ uvicorn main:app --reload --host 0.0.0.0 --port 8080
 This project includes a `Procfile` for deployment on platforms like Heroku.
 
 ## API Documentation
-
-Once the server is running, visit:
-
-- Swagger UI: `http://localhost:8080/docs`
-- ReDoc: `http://localhost:8080/redoc`
