@@ -11,9 +11,6 @@ logger = logging.getLogger(__name__)
 supabase_url = os.getenv("SUPABASE_URL")
 anon_key = os.getenv("SUPABASE_ANON_KEY")
 
-print(f"Supabase URL: {supabase_url}")
-print(f"Anon Key: {anon_key}")
-
 # Store token in memory
 auth_token = None
 org_id = None
