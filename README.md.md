@@ -77,13 +77,44 @@ To run in development mode with auto-reload:
 uvicorn main:app --reload --host 0.0.0.0 --port 8080
 ```
 
+## Docker
+
+### Build and run with Docker
+
+1. **Build the image**
+
+```bash
+docker build -t stackai-backend .
+```
+
+2. **Run the container**
+
+```bash
+docker run -p 8080:8080 --env-file .env stackai-backend
+```
+
+### Using Docker Compose
+
+Create a `docker-compose.yml`:
+
+```yaml
+version: "3.8"
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    restart: unless-stopped
+```
+
+Run with:
+
+```bash
+docker-compose up -d
+```
+
 ## Deployment
 
 This project includes a `Procfile` for deployment on platforms like Heroku.
-
-## API Documentation
-
-Once the server is running, visit:
-
-- Swagger UI: `http://localhost:8080/docs`
-- ReDoc: `http://localhost:8080/redoc`

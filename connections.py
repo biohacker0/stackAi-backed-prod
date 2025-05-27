@@ -35,13 +35,13 @@ def listResources(resource_id=None):
     
     data = response.json()
     
-    # Handle the nested data structure
+    
     if isinstance(data, dict) and 'data' in data:
         resources = data['data']
     else:
         resources = data
     
-    # Format the resources for frontend
+    # Formatted the for frontend to list resources
     formatted_resources = []
     for resource in resources:
         formatted_resources.append({

@@ -16,7 +16,11 @@ logger = logging.getLogger(__name__)
 app = FastAPI()
 
 # Get CORS origins from environment
-cors_origins = os.getenv("CORS_ORIGINS", "http://localhost:3000").split(",")
+cors_origins = [
+    origin.strip()
+    for origin in os.getenv("CORS_ORIGINS", "http://localhost:3000").split(",")
+]
+
 
 app.add_middleware(
     CORSMiddleware,
