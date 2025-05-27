@@ -1,0 +1,47 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE/editor configs
+.vscode/
+.idea/
+
+# Bytecode and logs
+*.log
+*.pot
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Testing
+.coverage
+htmlcov/
+.tox/
+pytest_cache/
+
+# MyPy
+.mypy_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment files
+.env
+*.env
+
+# Build/output
+build/
+dist/
+*.egg-info/
+
+# SQLite or temp DBs
+*.db
+*.sqlite3
