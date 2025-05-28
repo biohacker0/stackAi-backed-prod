@@ -80,6 +80,13 @@ def listKnowledgeBaseResources(kb_id, resource_path="/"):
     
     response = requests.get(url, headers=headers, params=params)
     
+    # Handle empty folder case
+    if response.status_code == 400:
+        error_data = response.json()
+        if "does not exist" in error_data.get("detail", ""):
+            # Folder doesn't exist in KB - return empty list
+            return []
+    
     if response.status_code != 200:
         logger.error(f"Failed to list KB resources: {response.text}")
         return None
